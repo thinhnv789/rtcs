@@ -1,10 +1,10 @@
 //'token=eyJhbGciOiJIUzI1NiJ9.NWEyNDE5NDc2ZGVmY2YzNDgyMWMyODQ1.44zWW2xEt4B_wwmLFJ0-IJFgxbX3fJrGa2ay8NB4pO0'
 const token = getCookie('rtcs_chat_token');
-const socket = io('http://localhost:2201', {query: 'token=' + token});
+const socket = io('http://chat.thinhnv.net', {query: 'token=' + token});
 // const adminSocket = io('/admin');
 /*=== List api using ===*/
-const apiLogin = "http://localhost:2201/api/auth/login";
-const apiGetCustomers = "http://localhost:2201/api/chat/customers";
+const apiLogin = "http://chat.thinhnv.net/api/auth/login";
+const apiGetCustomers = "http://chat.thinhnv.net/api/chat/customers";
 
 socket.on('connect', () => {
     socket.emit('admin_identify');
@@ -45,7 +45,7 @@ socket.on('connect', () => {
         /**
          * Add css to head
          */
-        const css = '.chat-wrap{position:fixed;bottom:0;right:0}.chat-wrap .chat-btn-neo{box-sizing:content-box;z-index:999999;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:0;width:108px;height:36px;line-height:36px;font-family:arial;font-size:14px;transition:1s;position:relative;float:right;bottom:1px;right:5px;background-color:#dd8f24;color:#fff;cursor:pointer}.chat-wrap .chat-btn-neo::before{content:"";width:28px;height:28px;display:inline-block;background:url(http://localhost:2201/images/chat-icons-v1.png);background-position:-42px 0;margin-top:8px;float:left;margin-right:2px}.chat-login-form{width:228px;background:#d3d3d3;padding:25px 15px;margin:0 5px 5px 0;border-radius:5px}.chat-login-form.hidden{display:none}.chat-login-form .chat-input{margin-bottom:15px;width:100%}.list-chat{position:fixed;width:268px;background-color:#e9ebee;bottom:0;right:10px;min-height:88%;z-index:9999;border-top-left-radius:5px;border-top-right-radius:5px}.list-chat.hide-list{width:115px;height:28px;min-height:28px}.list-chat .list-chat-header{height:28px;line-height:28px;padding:0 15px;background-color:#4080ff;color:#fff;border-top-left-radius:5px;border-top-right-radius:5px}.list-chat ul{list-style-type:none;margin:0;padding:0 10px}.list-chat .list-chat-item,.list-chat .list-chat-item span{height:32px;line-height:32px;cursor:pointer}.list-chat .list-chat-item span{display:inline-block}.list-chat .list-chat-item::after{content:"";width:6px;height:6px;display:inline-block;background-color:rgb(66,183,42);border-radius:50%;float:right;right:15px;margin-top:13px}.list-chat .list-chat-item .list-chat-avt{width:24px;height:24px;display:inline-block;background:url(http://localhost:2201/images/chat-icons-v1.png);background-position:-133px 0;position:absolute;margin-top:6px}.list-chat .list-chat-item .contact-name{padding-left:30px}';
+        const css = '.chat-wrap{position:fixed;bottom:0;right:0}.chat-wrap .chat-btn-neo{box-sizing:content-box;z-index:999999;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:0;width:108px;height:36px;line-height:36px;font-family:arial;font-size:14px;transition:1s;position:relative;float:right;bottom:1px;right:5px;background-color:#dd8f24;color:#fff;cursor:pointer}.chat-wrap .chat-btn-neo::before{content:"";width:28px;height:28px;display:inline-block;background:url(http://chat.thinhnv.net/images/chat-icons-v1.png);background-position:-42px 0;margin-top:8px;float:left;margin-right:2px}.chat-login-form{width:228px;background:#d3d3d3;padding:25px 15px;margin:0 5px 5px 0;border-radius:5px}.chat-login-form.hidden{display:none}.chat-login-form .chat-input{margin-bottom:15px;width:100%}.list-chat{position:fixed;width:268px;background-color:#e9ebee;bottom:0;right:10px;min-height:88%;z-index:9999;border-top-left-radius:5px;border-top-right-radius:5px}.list-chat.hide-list{width:115px;height:28px;min-height:28px}.list-chat .list-chat-header{height:28px;line-height:28px;padding:0 15px;background-color:#4080ff;color:#fff;border-top-left-radius:5px;border-top-right-radius:5px}.list-chat ul{list-style-type:none;margin:0;padding:0 10px}.list-chat .list-chat-item,.list-chat .list-chat-item span{height:32px;line-height:32px;cursor:pointer}.list-chat .list-chat-item span{display:inline-block}.list-chat .list-chat-item::after{content:"";width:6px;height:6px;display:inline-block;background-color:rgb(66,183,42);border-radius:50%;float:right;right:15px;margin-top:13px}.list-chat .list-chat-item .list-chat-avt{width:24px;height:24px;display:inline-block;background:url(http://chat.thinhnv.net/images/chat-icons-v1.png);background-position:-133px 0;position:absolute;margin-top:6px}.list-chat .list-chat-item .contact-name{padding-left:30px}';
         let st = document.createElement('style');
         st.type = 'text/css';
         st.appendChild(document.createTextNode(css));
@@ -211,7 +211,7 @@ function createNewChatBox(socket, partner) {
     let hideBox = document.createElement('span');
     hideBox.className = 'hide-box';
     hideBox.style = 'width: 12px; height: 10px; margin-top: 9px; margin-right: 8px; display: inline-block;'
-                + ' background: url(http://localhost:2201/images/chat-icons-v1.png); background-position: 0 -3px; vertical-align: top;';
+                + ' background: url(http://chat.thinhnv.net/images/chat-icons-v1.png); background-position: 0 -3px; vertical-align: top;';
     hideBox.onclick = function() {
         let thisBox = document.getElementById(partner._id);
         if (thisBox) {
@@ -224,7 +224,7 @@ function createNewChatBox(socket, partner) {
     let closeBox = document.createElement('span');
     closeBox.className = 'close-box';
     closeBox.style = 'width: 12px; height: 12px; margin-top: 8px; display: inline-block;'
-                    + ' background: url(http://localhost:2201/images/chat-icons-v1.png); background-position: -26px -2px;';
+                    + ' background: url(http://chat.thinhnv.net/images/chat-icons-v1.png); background-position: -26px -2px;';
     closeBox.onclick = function() {
         let thisBox = document.getElementById(partner._id);
         if (thisBox) {
@@ -263,7 +263,7 @@ function createNewChatBox(socket, partner) {
 
     let btnSend = document.createElement('button');
     btnSend.className = 'send-message';
-    btnSend.style = 'width: 40px; height: 25px; border: none; margin-top: 5px; background: url(http://localhost:2201/images/chat-icons-v1.png); background-position: -70px 0px;box-sizing: border-box; vertical-align: top;';
+    btnSend.style = 'width: 40px; height: 25px; border: none; margin-top: 5px; background: url(http://chat.thinhnv.net/images/chat-icons-v1.png); background-position: -70px 0px;box-sizing: border-box; vertical-align: top;';
     btnSend.onclick = function() {
         let messageContent = chatBox.querySelector('.message-input');
         if (messageContent) {

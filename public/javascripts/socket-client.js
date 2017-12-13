@@ -1,4 +1,4 @@
-const socket = io('http://localhost:2201');
+const socket = io('http://chat.thinhnv.net');
 // const adminSocket = io('/admin');
 
 socket.on('connect', () => {
@@ -170,13 +170,13 @@ function createNewChatBox() {
     let hideBox = document.createElement('span');
     hideBox.className = 'hide-box';
     hideBox.style = 'width: 12px; height: 10px; margin-top: 9px; margin-right: 8px; display: inline-block;'
-                + ' background: url(http://localhost:2201/images/chat-icons-v1.png); background-position: 0 -3px; vertical-align: top;';
+                + ' background: url(http://chat.thinhnv.net/images/chat-icons-v1.png); background-position: 0 -3px; vertical-align: top;';
     headerToolbar.appendChild(hideBox);
 
     let closeBox = document.createElement('span');
     closeBox.className = 'close-box';
     closeBox.style = 'width: 12px; height: 12px; margin-top: 8px; display: inline-block;'
-                    + ' background: url(http://localhost:2201/images/chat-icons-v1.png); background-position: -26px -2px;';
+                    + ' background: url(http://chat.thinhnv.net/images/chat-icons-v1.png); background-position: -26px -2px;';
     headerToolbar.appendChild(closeBox);
 
     /**
@@ -209,7 +209,7 @@ function createNewChatBox() {
 
     let settingEl = document.createElement('span');
     settingEl.className = 'setting';
-    settingEl.style = 'position: absolute;float:right;right:10px;top: 13px;width: 16px;height:16px;background:url(http://localhost:2201/images/chat-icons-v1.png);background-position: -108px 0px';
+    settingEl.style = 'position: absolute;float:right;right:10px;top: 13px;width: 16px;height:16px;background:url(http://chat.thinhnv.net/images/chat-icons-v1.png);background-position: -108px 0px';
     account.appendChild(settingEl);
 
     /**
@@ -253,7 +253,7 @@ function createNewChatBox() {
     let btnSend = document.createElement('button');
     btnSend.className = 'send-message';
     btnSend.id = 'send-message';
-    btnSend.style = 'width: 40px; height: 25px; border: none; margin-top: 5px; background: url(http://localhost:2201/images/chat-icons-v1.png); background-position: -70px 0px;box-sizing: border-box; vertical-align: top;';
+    btnSend.style = 'width: 40px; height: 25px; border: none; margin-top: 5px; background: url(http://chat.thinhnv.net/images/chat-icons-v1.png); background-position: -70px 0px;box-sizing: border-box; vertical-align: top;';
     mainFooterContainer.appendChild(btnSend);
 
     document.body.appendChild(chatBox);
