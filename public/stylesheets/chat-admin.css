@@ -1,0 +1,115 @@
+.chat-wrap {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.chat-wrap .chat-btn-neo {
+    box-sizing: content-box;
+    z-index: 999999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0px;
+    width: 108px;
+    height: 36px;
+    line-height: 36px;
+    font-family: arial;
+    font-size: 14px;
+    transition: 1s;
+    position: relative;
+    float: right;
+    bottom: 1px;
+    right: 5px;
+    background-color: #dd8f24;
+    color: #fff;
+    cursor: pointer;
+}
+.chat-wrap .chat-btn-neo::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    background: url(http://localhost:2201/images/chat-icons-v1.png);
+    background-position: -42px 0;
+    margin-top: 8px;
+    float: left;
+    margin-right: 2px;
+}
+.chat-login-form {
+    width: 228px;
+    background: #d3d3d3;
+    padding: 25px 15px;
+    margin: 0 5px 5px 0;
+    border-radius: 5px;
+}
+.chat-login-form.hidden {
+    display: none;
+}
+.chat-login-form .chat-input {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+
+
+.list-chat {
+    position: fixed;
+    width: 268px;
+    background-color: #e9ebee;
+    bottom: 0;
+    right: 10px;
+    min-height: 88%;
+    z-index: 9999;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.list-chat.hide-list {
+    width: 115px;
+    height: 28px;
+    min-height: 28px;
+}
+.list-chat .list-chat-header {
+    height: 28px;
+    line-height: 28px;
+    padding: 0 15px;
+    background-color: #4080ff;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.list-chat ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px;
+}
+.list-chat .list-chat-item, .list-chat .list-chat-item span {
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+.list-chat .list-chat-item span {
+    display: inline-block;
+}
+.list-chat .list-chat-item::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    background-color: rgb(66, 183, 42);
+    border-radius: 50%;
+    float: right;
+    right: 15px;
+    margin-top: 13px;
+}
+.list-chat .list-chat-item .list-chat-avt {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(http://localhost:2201/images/chat-icons-v1.png);
+    background-position: -133px 0;
+    position: absolute;
+    margin-top: 6px;
+}
+.list-chat .list-chat-item .contact-name {
+    padding-left: 30px;
+}

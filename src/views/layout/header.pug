@@ -1,0 +1,54 @@
+#top
+  // .navbar
+  nav.navbar.navbar-inverse.navbar-static-top
+    .container-fluid
+      // Brand and toggle get grouped for better mobile display
+      header.navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='index.html')
+          img(src='assets/img/logo.png', alt='')
+      .topnav
+        .btn-group(style='margin-right: 15px;')
+          a#menu-toggle.btn.btn-primary.btn-sm.toggle-left(data-placement='bottom', data-original-title='Show / Hide Left', data-toggle='tooltip')
+            i.fa.fa-bars
+        .btn-group
+          a.btn.btn-metis-1.btn-sm(href='/user/logout', data-toggle='tooltip', data-original-title='Logout', data-placement='bottom')
+            i.fa.fa-sign-out  Logout
+      .navbar-collapse.navbar-ex1-collapse.collapse(aria-expanded='false', style='height: 1px;')
+        // .nav
+        ul.nav.navbar-nav
+          li
+            a(href='file.html') File Manager
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', aria-expanded='false')
+              | Setting
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='#') General
+              li
+                a(href='#') Validation
+        // /.nav
+    // /.container-fluid
+  // /.navbar
+  header.head
+    .search-bar
+      form.main-search(action='')
+        .input-group
+          input.form-control(type='text', placeholder='Live Search ...')
+          span.input-group-btn
+            button.btn.btn-primary.btn-sm.text-muted(type='button')
+              i.fa.fa-search
+      // /.main-search
+    // /.search-bar
+    .main-bar
+      h3
+        i.fa.fa-home
+        |   Content Management System
+    // /.main-bar
+  // /.head
+// /#top

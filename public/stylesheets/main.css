@@ -1,0 +1,164 @@
+.box {
+    margin: 10px auto;
+    display: block;
+    position: relative;
+    border: 1px solid #efefef
+}
+
+.box header {
+    background-image: -webkit-linear-gradient(top, #fff 0, #f2f2f2 100%);
+    background-image: -o-linear-gradient(top, #fff 0, #f2f2f2 100%);
+    background-image: linear-gradient(to bottom, #fff 0, #f2f2f2 100%);
+    background-repeat: repeat-x;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+    border-bottom: 1px solid #d4d4d4;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065)
+}
+
+.box header:before,
+.box header:after {
+    content: " ";
+    display: table
+}
+
+.box header:after {
+    clear: both
+}
+
+.box header .icons,
+.box header h5,
+.box header .toolbar {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding: 0;
+    margin: 0;
+    display: block
+}
+
+.box header .icons {
+    padding: 12.5px 15px;
+    border-right: 1px solid #ddd;
+    -webkit-box-shadow: 1px 0 0 #fff;
+    box-shadow: 1px 0 0 #fff
+}
+
+.box header h5 {
+    padding: 12px;
+    font-weight: bold
+}
+
+.box header .toolbar {
+    float: right;
+    display: inline-table
+}
+
+.box header .toolbar .btn-toolbar {
+    margin: 6px 3px
+}
+
+.box header .toolbar .label,
+.box header .toolbar .badge {
+    display: inline-block;
+    margin: 10px
+}
+
+.box header .toolbar .nav {
+    margin: 1px 1px 0 0
+}
+
+.box header .toolbar .nav>li {
+    display: inline-block
+}
+
+.box header .toolbar .nav>li>a {
+    padding-top: 9px
+}
+
+.box header .toolbar>.btn {
+    margin-right: 4px
+}
+
+.box header .toolbar>.btn-sm,
+.box header .toolbar>.btn-group {
+    margin: 4px
+}
+
+.box header .toolbar>.btn-xs {
+    margin: 6px
+}
+
+.box header .toolbar .input-sm {
+    margin: 4px -4px
+}
+
+.box header .toolbar .progress {
+    min-width: 120px;
+    margin: 10px 4px
+}
+
+.box header .toolbar .progress.middle {
+    height: 12px;
+    margin: 13px 4px
+}
+
+.box header .toolbar .progress.mini {
+    height: 6px;
+    margin: 16px 4px
+}
+
+.box .body {
+    padding: 10px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    background-color: #fff
+}
+
+.box .body hr {
+    margin-left: -10px;
+    margin-right: -10px
+}
+
+.body.collapse:not(.in) {
+    padding: 0
+}
+
+.box>.block {
+    padding: 0
+}
+
+.box.dark .table td{
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.row.ui-sortable .box header {
+    cursor: move
+}
+
+.user-actions {
+    padding: 15px;
+    background: #eeeded;
+}
+.cropper-container{
+    margin: auto;
+}
+
+input.mycropper-browse-file[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 80px;
+    height: 60px;
+}
+.custom-file-upload i{
+    font-size: 28px;
+    margin: auto;
+}

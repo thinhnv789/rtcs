@@ -1,0 +1,53 @@
+extends ../layout/main
+block stylesheets
+  link(rel='stylesheet', href='/stylesheets/bootstrap-chosen.css')
+block scripts
+  script(src='/javascripts/bootstrap-chosen.js')
+  script.
+    $(function() {
+    $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+    $('.chosen-status').chosen({ allow_single_deselect: true, disable_search: true });
+    });
+block content
+  .row
+    .col-lg-8
+      .box.dark
+        header
+          .icons
+            i.fa.fa-edit
+          h5 #{title}
+          // .toolbar
+          .toolbar
+            nav(style='padding: 8px;')
+              a.btn.btn-danger.btn-xs.close-box(href='javascript:;')
+                i.fa.fa-times
+          // /.toolbar
+        #div-1.body.collapse.in(aria-expanded='true', style='')
+        form.form-horizontal(method='POST', action='/role/create', style="padding: 0 15px;")
+          .form-group(class=errors && errors.name && 'has-error')
+            label.control-label.col-lg-4(for='name') Name
+            .col-lg-8
+              input#role-name.form-control(type='text', name='name', value=data && data.name, placeholder='Enter Role name')
+              if errors && errors.name
+                .help-block #{errors.name.msg}
+          .form-group(class=errors && errors.name && 'has-error')
+            label.control-label.col-lg-4(for='ident') Identification
+            .col-lg-8
+              input#ident.form-control(type='text', name='ident', value=data && data.ident, placeholder='Identification')  
+              if errors && errors.ident
+                .help-block #{errors.ident.msg}
+          .form-group
+            label.control-label.col-lg-4(for='description') Description
+            .col-lg-8
+              textarea#description.form-control(type='text', name='description', placeholder='Description', row='2')  
+          .form-group
+            label.control-label.col-lg-4(for='status') Status
+            .col-lg-8
+              select.chosen-status(name='status', data-placeholder='Status', style='width: 100px;')
+                option(value=1) Active
+                option(value=0) Inactive
+          .form-group  
+            .col-lg-4
+            .col-lg-8
+              input#submit.btn.btn-success(type='submit', text='Submit')
+        

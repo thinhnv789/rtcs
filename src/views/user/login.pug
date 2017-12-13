@@ -1,0 +1,51 @@
+
+head
+  title=title
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  // Latest compiled and minified CSS
+  link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/libs/font-awesome/css/font-awesome.min.css')
+  link(rel='stylesheet', href='/stylesheets/main.css')
+body(style='background: #d3d3d3;')
+  .login-page
+    .row
+      .col-lg-3
+      .col-lg-6
+        .box.dark(style='margin-top: 10%;background: #fff;')
+          header
+            .icons
+              i.fa.fa-edit
+            h5 Welcome to my CMS
+            // .toolbar
+            .toolbar
+              nav(style='padding: 8px;')
+                a.btn.btn-danger.btn-xs.close-box(href='javascript:;')
+                  i.fa.fa-times
+            // /.toolbar
+          #div-1.body.collapse.in(aria-expanded='true', style='')
+          form.form-horizontal(method='POST', action='/user/login', style="padding: 0 15px;")
+            .form-group
+              .col-lg-2
+              .col-lg-8(class=errors && errors.email && 'has-error')
+                label.control-label(for='email') Email
+                input#email.form-control(type='text', name='email', value=data && data.email, placeholder='Email')
+                if errors && errors.email
+                  .help-block #{errors.email.msg}
+            .form-group
+              .col-lg-2
+              .col-lg-8(class=errors && errors.password && 'has-error')
+                label.control-label(for='password') Password
+                input#password.form-control(type='password', name='password', placeholder='Password')
+                if errors && errors.password
+                  .help-block #{errors.password.msg}
+            hr
+            .form-group  
+              .col-lg-2
+              .col-lg-4
+                input#submit.btn.btn-success(type='submit', text='Login')
+    
+    // Latest compiled JavaScript
+  script(src='/libs/jquery/dist/jquery.min.js')
+  // Latest compiled JavaScript
+  script(src='/libs/bootstrap/dist/js/bootstrap.min.js')
+        

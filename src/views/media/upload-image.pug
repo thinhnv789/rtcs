@@ -1,0 +1,39 @@
+extends ../layout/main
+block stylesheets
+	link(rel='stylesheet', href='/libs/cropperjs/dist/cropper.min.css')
+	link(rel='stylesheet', href='/libs/magnific-popup/dist/magnific-popup.css')
+	link(rel='stylesheet', href='/stylesheets/my-cropper.css')
+block scripts
+	script(src='/libs/cropperjs/dist/cropper.min.js')
+	script(src='/libs/magnific-popup/dist/jquery.magnific-popup.min.js')
+	script(src='/javascripts/cropper-config.js')
+block content
+	.row
+		.col-lg-12
+			.box.dark
+				header
+					.icons
+						i.fa.fa-table
+					h5 #{title}
+
+				input#choose-image(type='file', name='image', onchange='readURL(this);')
+
+				a.cropper-popup(href='#cropper-modal')
+				#cropper-modal.cropper-popup-block.mfp-hide
+					.cropper-block.image_container(style='width: 600px; height: 400px; margin: auto')
+						//- p
+						//- 	a.popup-modal-dismiss(href='#') Dismiss
+						.toolbar
+							button#crop.toolbar-button
+								i.fa.fa-crop
+							button#zoomIn.toolbar-button
+								i.fa.fa-search-plus
+							button#zoomOut.toolbar-button
+								i.fa.fa-search-minus
+							button#rotateLeft.toolbar-button
+								i.fa.fa-rotate-left
+							button#rotateRight.toolbar-button
+								i.fa.fa-rotate-right
+							button#submitCrop.toolbar-button
+								i.fa.fa-check
+						img#image-preview(src='#', alt='your image')

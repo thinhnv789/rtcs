@@ -1,0 +1,44 @@
+extends ../layout/main
+block stylesheets
+	link(rel='stylesheet', href='/stylesheets/jquery.dataTables-custom.css')
+	link(rel='stylesheet', href='/stylesheets/bootstrap-chosen.css')
+block scripts
+	script(src='/javascripts/jquery.dataTables.min.js')
+	script(src='/javascripts/bootstrap-chosen.js')
+	script.
+		$(function() {
+		$('#role-list').DataTable();
+		});
+block content
+	.row
+		.col-lg-12
+			.box.dark
+				header
+					.icons
+						i.fa.fa-table
+					h5 #{title}
+				.user-actions
+					a.btn.btn-success(href='/room/create') Tạo mới
+				table#role-list.table.table-responsive.display(cellspacing='0', width='100%')
+					thead
+						tr
+							th.hidden-xs STT
+							th Room Name
+							th Description
+							th.text-center Status
+							th.text-center
+								em.fa.fa-cog
+					tbody
+						- var i = 1;
+						each room in rooms
+							tr
+								td.hidden-xs #{i}
+								td #{room.roomName}
+								td #{room.description}
+								td.text-center #{room.status ? 'Active' : 'Inactive'}
+								td(align='center')
+									a.btn.btn-default
+										em.fa.fa-pencil
+									a.btn.btn-danger
+										em.fa.fa-trash
+							- i += 1

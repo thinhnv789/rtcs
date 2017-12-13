@@ -1,0 +1,29 @@
+head
+  title=title
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  // Latest compiled and minified CSS
+  link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/libs/font-awesome/css/font-awesome.min.css')
+  link(rel='stylesheet', href='/stylesheets/metis-admin.css')
+  link(rel='stylesheet', href='/stylesheets/main.css')
+  block stylesheets
+body
+  //block content
+  #wrap.bg-dark.dk
+    // Header
+    include header
+    // Sidebar left
+    include sidebar
+    // Content page
+    #content
+      .outer
+        .bg-light
+          block content
+  // Latest compiled JavaScript
+  script(src='/libs/jquery/dist/jquery.min.js')
+  // Latest compiled JavaScript
+  script(src='/libs/bootstrap/dist/js/bootstrap.min.js')
+  // Latest compiled JavaScript
+  script(src='/javascripts/metis-admin.js')
+  script(src='/javascripts/main.js')
+  block scripts

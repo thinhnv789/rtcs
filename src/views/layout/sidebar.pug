@@ -1,0 +1,57 @@
+#left
+  .media.user-media.bg-dark.dker
+    .user-media-toggleHover
+      span.fa.fa-user
+    .user-wrapper.bg-dark
+      a.user-link(href='')
+        img.media-object.img-thumbnail.user-img(alt='User Picture', src='/images/default-user.png')
+      .media-body
+        h5.media-heading #{user ? user.userName : 'User Anonymous'}
+        ul.list-unstyled.user-info
+          li.ellipsis
+            a(href='#') #{user ? user.email : 'Administrator'}
+          li
+            | Calendar :
+            br
+            small
+              - var d = new Date()
+              i.fa.fa-calendar  #{d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear()}
+  // #menu
+  ul#menu.bg-dark.dker
+    li.nav-header.text-center cms
+    li.nav-divider
+    li
+      a(href='/')
+        i.fa.fa-dashboard
+        span.link-title  Dashboard
+    li.nav-divider
+    li.menu-dropdown(class=(Array.isArray(current) && current[0]=='room') && 'active')
+      a(href='javascript:void(0);')
+        i.fa.fa-comments-o
+        span.link-title  Phòng chat
+        span.fa.arrow
+      ul.collapse(aria-expanded='false', class=(Array.isArray(current) && current[0]=='room') && 'in')
+        li(class=(Array.isArray(current) && current[0]=='room' && current[1]=='index') && 'current-route')
+          a(href='/room')
+            i.fa.fa-list
+            |   Danh sách phòng chat
+        li(class=(Array.isArray(current) && current[0]=='room' && current[1]=='create') && 'current-route')
+          a(href='/room/create')
+            i.fa.fa-plus
+            |   Tạo phòng mới
+    li.menu-dropdown(class=(Array.isArray(current) && current[0]=='user') && 'active')
+      a(href='javascript:void(0);')
+        i.fa.fa-user-o
+        span.link-title  Tài khoản
+        span.fa.arrow
+      ul.collapse(aria-expanded='false', class=(Array.isArray(current) && current[0]=='user') && 'in')
+        li(class=(Array.isArray(current) && current[0]=='user' && current[1]=='index') && 'current-route')
+          a(href='/user')
+            i.fa.fa-list
+            |   Danh sách tài khoản
+        li(class=(Array.isArray(current) && current[0]=='user' && current[1]=='create') && 'current-route')
+          a(href='/user/create')
+            i.fa.fa-plus
+            |   Tạo tài khoản mới
+  // /#menu
+// /#left

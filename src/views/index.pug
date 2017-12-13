@@ -1,0 +1,9 @@
+extends ./layout/main
+block stylesheets
+block content
+	h1= title
+	p Welcome to #{title} abc
+block scripts
+	script(src='/socket.io/socket.io.js')
+	script(src='/javascripts/socket-client.js')
+	

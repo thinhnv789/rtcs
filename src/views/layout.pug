@@ -1,0 +1,271 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/metis-admin.css')
+  body
+    //block content
+
+    #wrap.bg-dark.dk
+      #top
+        // .navbar
+        nav.navbar.navbar-inverse.navbar-static-top
+          .container-fluid
+            // Brand and toggle get grouped for better mobile display
+            header.navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.navbar-brand(href='index.html')
+                img(src='assets/img/logo.png', alt='')
+            .topnav
+              .btn-group
+                a#toggleFullScreen.btn.btn-default.btn-sm(data-placement='bottom', data-original-title='Fullscreen', data-toggle='tooltip')
+                  i.glyphicon.glyphicon-fullscreen
+              .btn-group
+                a.btn.btn-default.btn-sm(data-placement='bottom', data-original-title='E-mail', data-toggle='tooltip')
+                  i.fa.fa-envelope
+                  span.label.label-warning 5
+                a.btn.btn-default.btn-sm(data-placement='bottom', data-original-title='Messages', href='#', data-toggle='tooltip')
+                  i.fa.fa-comments
+                  span.label.label-danger 4
+                a.btn.btn-default.btn-sm(data-toggle='modal', data-original-title='Help', data-placement='bottom', href='#helpModal')
+                  i.fa.fa-question
+              .btn-group
+                a.btn.btn-metis-1.btn-sm(href='login.html', data-toggle='tooltip', data-original-title='Logout', data-placement='bottom')
+                  i.fa.fa-power-off
+              .btn-group
+                a#menu-toggle.btn.btn-primary.btn-sm.toggle-left(data-placement='bottom', data-original-title='Show / Hide Left', data-toggle='tooltip')
+                  i.fa.fa-bars
+                a.btn.btn-default.btn-sm.toggle-right(data-placement='bottom', data-original-title='Show / Hide Right', data-toggle='tooltip')
+                  span.glyphicon.glyphicon-comment
+            .navbar-collapse.navbar-ex1-collapse.collapse(aria-expanded='false', style='height: 1px;')
+              // .nav
+              ul.nav.navbar-nav
+                li
+                  a(href='dashboard.html') Dashboard
+                li
+                  a(href='table.html') Tables
+                li
+                  a(href='file.html') File Manager
+                li.dropdown
+                  a.dropdown-toggle(href='#', data-toggle='dropdown', aria-expanded='false')
+                    | Form Elements
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='form-general.html') General
+                    li
+                      a(href='form-validation.html') Validation
+                    li
+                      a(href='form-wysiwyg.html') WYSIWYG
+                    li
+                      a(href='form-wizard.html') Wizard & File Upload
+              // /.nav
+          // /.container-fluid
+        // /.navbar
+        header.head
+          .search-bar
+            form.main-search(action='')
+              .input-group
+                input.form-control(type='text', placeholder='Live Search ...')
+                span.input-group-btn
+                  button.btn.btn-primary.btn-sm.text-muted(type='button')
+                    i.fa.fa-search
+            // /.main-search
+          // /.search-bar
+          .main-bar
+            h3
+              i.fa.fa-home
+              |   Metis
+          // /.main-bar
+        // /.head
+      // /#top
+      #left
+        .media.user-media.bg-dark.dker
+          .user-media-toggleHover
+            span.fa.fa-user
+          .user-wrapper.bg-dark
+            a.user-link(href='')
+              img.media-object.img-thumbnail.user-img(alt='User Picture', src='assets/img/user.gif')
+              span.label.label-danger.user-label 16
+            .media-body
+              h5.media-heading Archie
+              ul.list-unstyled.user-info
+                li
+                  a(href='') Administrator
+                li
+                  | Last Access :
+                  br
+                  small
+                    i.fa.fa-calendar
+                    |  16 Mar 16:32
+        // #menu
+        ul#menu.bg-dark.dker
+          li.nav-header Menu
+          li.nav-divider
+          li
+            a(href='dashboard.html')
+              i.fa.fa-dashboard
+              span.link-title  Dashboard
+          li.menu-dropdown
+            a(href='javascript:void(0);')
+              i.fa.fa-building
+              span.link-title Layouts
+              span.fa.arrow
+            ul.collapse(aria-expanded='false')
+              li
+                a(href='boxed.html')
+                  i.fa.fa-angle-right
+                  |   Boxed Layout
+              li
+                a(href='fixed-header-boxed.html')
+                  i.fa.fa-angle-right
+                  |   Boxed Layout & Fixed Header
+              li
+                a(href='fixed-header-fixed-mini-sidebar.html')
+                  i.fa.fa-angle-right
+                  |   Fixed Header and Fixed Mini Menu
+              li
+                a(href='fixed-header-menu.html')
+                  i.fa.fa-angle-right
+                  |   Fixed Header & Menu
+              li
+                a(href='fixed-header-mini-sidebar.html')
+                  i.fa.fa-angle-right
+                  |   Fixed Header & Mini Menu
+              li
+                a(href='fixed-header.html')
+                  i.fa.fa-angle-right
+                  |   Fixed Header
+              li
+                a(href='fixed-menu-boxed.html')
+                  i.fa.fa-angle-right
+                  |   Boxed Layout & Fixed Menu
+              li
+                a(href='fixed-menu.html')
+                  i.fa.fa-angle-right
+                  |   Fixed Menu
+              li
+                a(href='fixed-mini-sidebar.html')
+                  i.fa.fa-angle-right
+                  |   Fixed & Mini Menu
+              li
+                a(href='fxhmoxed.html')
+                  i.fa.fa-angle-right
+                  |   Boxed and Fixed Header & Nav
+              li
+                a(href='no-header-sidebar.html')
+                  i.fa.fa-angle-right
+                  |   No Header & Sidebars
+              li
+                a(href='no-header.html')
+                  i.fa.fa-angle-right
+                  |   No Header
+              li
+                a(href='no-left-right-sidebar.html')
+                  i.fa.fa-angle-right
+                  |   No Left & Right Sidebar
+              li
+                a(href='no-left-sidebar-main-search.html')
+                  i.fa.fa-angle-right
+                  |   No Left Sidebar & Main Search
+              li
+                a(href='no-left-sidebar.html')
+                  i.fa.fa-angle-right
+                  |   No Left Sidebar
+              li
+                a(href='no-main-search.html')
+                  i.fa.fa-angle-right
+                  |   No Main Search
+              li
+                a(href='no-right-sidebar.html')
+                  i.fa.fa-angle-right
+                  |   No Right Sidebar
+              li
+                a(href='sm.html')
+                  i.fa.fa-angle-right
+                  |   Mini Sidebar
+         
+           
+          li.nav-divider
+          li.menu-dropdown
+            a(href='javascript:;')
+              i.fa.fa-code
+              span.link-title
+                | Unlimited Level Menu
+              span.fa.arrow
+            ul.collapse
+              li
+                a(href='javascript:;')
+                  | Level 1  
+                  span.fa.arrow
+                ul.collapse
+                  li
+                    a(href='javascript:;') Level 2
+                  li
+                    a(href='javascript:;') Level 2
+                  li
+                    a(href='javascript:;')
+                      | Level 2  
+                      span.fa.arrow
+                    ul.collapse
+                      li
+                        a(href='javascript:;') Level 3
+                      li
+                        a(href='javascript:;') Level 3
+                      li
+                        a(href='javascript:;')
+                          | Level 3  
+                          span.fa.arrow
+                        ul.collapse
+                          li
+                            a(href='javascript:;') Level 4
+                          li
+                            a(href='javascript:;') Level 4
+                          li
+                            a(href='javascript:;')
+                              | Level 4  
+                              span.fa.arrow
+                            ul.collapse
+                              li
+                                a(href='javascript:;') Level 5
+                              li
+                                a(href='javascript:;') Level 5
+                              li
+                                a(href='javascript:;') Level 5
+                      li
+                        a(href='javascript:;') Level 4
+                  li
+                    a(href='javascript:;') Level 2
+              li
+                a(href='javascript:;') Level 1
+              li
+                a(href='javascript:;')
+                  | Level 1  
+                  span.fa.arrow
+                ul.collapse
+                  li
+                    a(href='javascript:;') Level 2
+                  li
+                    a(href='javascript:;') Level 2
+                  li
+                    a(href='javascript:;') Level 2
+        // /#menu
+      // /#left
+      #content
+        .outer
+          block content
+
+  <!-- jQuery library -->
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  <!-- Latest compiled JavaScript -->
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  <!-- Latest compiled JavaScript -->
+  script(src='/javascripts/metis-admin.js')

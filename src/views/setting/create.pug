@@ -1,0 +1,47 @@
+extends ../layout/main
+block stylesheets
+  link(rel='stylesheet', href='/stylesheets/bootstrap-chosen.css')
+block scripts
+  script(src='/javascripts/bootstrap-chosen.js')
+  script.
+    $(function() {
+    $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+    $('.chosen-status').chosen({ allow_single_deselect: true, disable_search: true });
+    });
+block content
+  .row
+    .col-lg-8
+      .box.dark
+        header
+          .icons
+            i.fa.fa-edit
+          h5 #{title}
+          // .toolbar
+          .toolbar
+            nav(style='padding: 8px;')
+              a.btn.btn-danger.btn-xs.close-box(href='javascript:;')
+                i.fa.fa-times
+          // /.toolbar
+        #div-1.body.collapse.in(aria-expanded='true', style='')
+        form.form-horizontal(method='POST', action='/setting/create', style="padding: 0 15px;")
+          .form-group(class=errors && errors.key && 'has-error')
+            label.control-label.col-lg-4(for='key') Setting Key
+            .col-lg-8
+              input#role-name.form-control(type='text', name='key', value=data && data.key, placeholder='Enter Setting Key')
+              if errors && errors.key
+                .help-block #{errors.key.msg}
+          .form-group
+            .col-lg-4
+              label.control-label(for='value', style='display: block;text-align: left;') Setting value
+              select.select-value.form-control(name='value', data-placeholder='Value', style='width: 100px;display: block;')
+                each room in rooms
+                  option(value=room._id) #{room.roomName}
+          .form-group
+            label.control-label.col-lg-4(for='description') Description
+            .col-lg-8
+              textarea#description.form-control(type='text', name='description', placeholder='Description', row='2')  
+          .form-group  
+            .col-lg-4
+            .col-lg-8
+              input#submit.btn.btn-success(type='submit', text='Submit')
+        

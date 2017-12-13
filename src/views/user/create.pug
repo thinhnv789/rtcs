@@ -1,0 +1,81 @@
+extends ../layout/main
+block stylesheets
+  link(rel='stylesheet', href='/stylesheets/bootstrap-chosen.css')
+block scripts
+  script(src='/javascripts/bootstrap-chosen.js')
+  script.
+    $(function() {
+    $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+    $('.chosen-status, .select-gender').chosen({ allow_single_deselect: true, disable_search: true });
+    });
+block content
+  .row
+    .col-lg-12
+      .box.dark
+        header
+          .icons
+            i.fa.fa-edit
+          h5 #{title}
+          // .toolbar
+          .toolbar
+            nav(style='padding: 8px;')
+              a.btn.btn-danger.btn-xs.close-box(href='javascript:;')
+                i.fa.fa-times
+          // /.toolbar
+        #div-1.body.collapse.in(aria-expanded='true', style='')
+        form.form-horizontal(method='POST', action='/user/create', style="padding: 0 15px;")
+          .form-group
+            .col-lg-6(class=errors && errors.firstName && 'has-error')
+              label.control-label(for='firstname') First Name
+              input#firstname.form-control(type='text', name='firstName', placeholder='Enter first name')
+              if errors && errors.firstName
+                .help-block #{errors.firstName.msg}
+            .col-lg-6(class=errors && errors.lastName && 'has-error')
+              label.control-label(for='lastName') Last Name
+              input#lastname.form-control(type='text', name='lastName', placeholder='Last Name')
+              if errors && errors.lastName
+                .help-block #{errors.lastName.msg}
+          .form-group
+            .col-lg-6(class=errors && errors.userName && 'has-error')
+              label.control-label(for='username') UserName
+              input#username.form-control(type='text', name='userName', placeholder='Enter username')
+              if errors && errors.userName
+                .help-block #{errors.userName.msg}
+            .col-lg-6(class=errors && errors.email && 'has-error')
+              label.control-label(for='email') Email
+              input#email.form-control(type='text', name='email', placeholder='Email')
+              if errors && errors.email
+                .help-block #{errors.email.msg}
+          .form-group
+            .col-lg-6(class=errors && errors.password && 'has-error')
+              label.control-label(for='password') Password
+              input#password.form-control(type='password', name='password', placeholder='Password')  
+              if errors && errors.password
+                .help-block #{errors.password.msg}
+            .col-lg-6(class=errors && errors.confirmPassword && 'has-error')
+              label.control-label(for='confirmPassword') Confirm Password
+              input#confirmPassword.form-control(type='password', name='confirmPassword', placeholder='Confirm Password')  
+              if errors && errors.confirmPassword
+                .help-block #{errors.confirmPassword.msg}
+          .form-group
+            .col-lg-4
+              label.control-label(for='gender', style='display: block;text-align: left;') Gender
+              select.select-gender.form-control(name='gender', data-placeholder='Gender', style='width: 100px;display: block;')
+                option(value=1) Male
+                option(value=2) Female
+                option(value=2) Other
+            .col-lg-4
+              label.control-label(for='role', style='display: block;text-align: left;') Role
+              select.select-role.form-control(name='role', data-placeholder='Role', style='width: 100px;display: block;')
+                each role in roles
+                  option(value=role._id) #{role.name}
+            .col-lg-4
+              label.control-label(for='status', style='display: block;text-align: left;') Status
+              select.chosen-status.form-control(name='status', data-placeholder='Status', style='width: 100px;display: block;')
+                option(value=1) Active
+                option(value=0) Inactive
+          hr
+          .form-group  
+            .col-lg-4
+              input#submit.btn.btn-success(type='submit', text='Submit')
+        
