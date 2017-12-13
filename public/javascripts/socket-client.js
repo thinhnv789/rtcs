@@ -126,7 +126,7 @@ function createNewChatBox() {
     chatBox.className = 'chat-box';
     chatBox.style = 'width: ' + boxWidth + 'px; height: ' + boxHeight
                     + 'px; position: fixed; z-index: 9999; bottom: 0; right: 15px; '
-                    + 'background: #ccc; border: 1px solid #ddd; border-top-left-radius: 5px;'
+                    + 'background: #ccc; box-shadow:-1px -1px 5px rgba(50, 50, 50, 0.17); border-top-left-radius: 5px;'
                     + 'border-top-right-radius: 5px;';
 
     /**
@@ -218,7 +218,7 @@ function createNewChatBox() {
     let chatBoxContent = document.createElement('div');
     chatBoxContent.className = 'chat-box-content';
     chatBoxContent.id = 'chat-box-content';
-    chatBoxContent.style = 'height: ' + boxContentHeight + 'px; background: #e5e5e5; overflow-y: scroll;';
+    chatBoxContent.style = 'height: ' + boxContentHeight + 'px; background: #e5e5e5; overflow-y: auto;';
     chatBox.appendChild(chatBoxContent);
 
     /**
