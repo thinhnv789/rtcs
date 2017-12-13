@@ -1,5 +1,5 @@
 //'token=eyJhbGciOiJIUzI1NiJ9.NWEyNDE5NDc2ZGVmY2YzNDgyMWMyODQ1.44zWW2xEt4B_wwmLFJ0-IJFgxbX3fJrGa2ay8NB4pO0'
-const token = getCookie('rtcs_chat_token');
+const token = localStorage.getItem('rtcs_chat_token');
 const socket = io('http://chat.thinhnv.net', {query: 'token=' + token});
 // const adminSocket = io('/admin');
 /*=== List api using ===*/
@@ -336,8 +336,14 @@ function createLoginForm() {
         
         http.onreadystatechange = function() {//Call a function when the state changes.
             if(http.readyState == 4 && http.status == 200) {
-                console.log(http.responseText);
-                window.location.reload();
+                let dataRes = http.response;
+                if(dataRes) {
+                    dataRes = JSON.parse(dataRes);
+                    console.log('dataRes', dataRes);
+                    localStorage.setItem('rtcs_chat_token', dataRes.token);
+                    window.location.reload();
+                }
+                // window.location.reload();
             }
         }
         http.send(params);
