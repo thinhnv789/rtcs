@@ -25,6 +25,7 @@ socket.on('connect', () => {
      * Event receive message from server
      */
     socket.on('owner_message', (data) => {
+        console.log('owner_message', data);
         let messEl = document.createElement('li');
         messEl.textContent = data.messageContent;
         
@@ -34,6 +35,11 @@ socket.on('connect', () => {
         let boxContent = document.getElementById('chat-box-content');
         if (boxContent) {
             boxContent.appendChild(messEl);
+
+            let userName = document.createElement('span');
+            userName.className = 'username';
+            userName.textContent = data.sender.userName;
+            messEl.appendChild(userName);
         }
 
         /**
@@ -73,7 +79,6 @@ socket.on('connect', () => {
     
     if (sendMessBtn) {
         sendMessBtn.onclick = function(e) {
-            console.log('send message');
             let messageContent = document.getElementById('message-input');
 
             if (messageContent) {
